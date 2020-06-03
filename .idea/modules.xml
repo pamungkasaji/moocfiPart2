@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/moocfiPart2.iml" filepath="$PROJECT_DIR$/.idea/moocfiPart2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week10-week10_27.TheFinnishRingingCentre/week10-week10_27.TheFinnishRingingCentre.iml" filepath="$PROJECT_DIR$/week10-week10_27.TheFinnishRingingCentre/week10-week10_27.TheFinnishRingingCentre.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week10-week10_28.Groups/week10-week10_28.Groups.iml" filepath="$PROJECT_DIR$/week10-week10_28.Groups/week10-week10_28.Groups.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week10-week10_29.PersonAndTheirHeirs/week10-week10_29.PersonAndTheirHeirs.iml" filepath="$PROJECT_DIR$/week10-week10_29.PersonAndTheirHeirs/week10-week10_29.PersonAndTheirHeirs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week10-week10_30.Container/week10-week10_30.Container.iml" filepath="$PROJECT_DIR$/week10-week10_30.Container/week10-week10_30.Container.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week10-week10_31.FarmSimulator/week10-week10_31.FarmSimulator.iml" filepath="$PROJECT_DIR$/week10-week10_31.FarmSimulator/week10-week10_31.FarmSimulator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week10-week10_32.DifferentBoxes/week10-week10_32.DifferentBoxes.iml" filepath="$PROJECT_DIR$/week10-week10_32.DifferentBoxes/week10-week10_32.DifferentBoxes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week10-week10_33.Dungeon/week10-week10_33.Dungeon.iml" filepath="$PROJECT_DIR$/week10-week10_33.Dungeon/week10-week10_33.Dungeon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week11-week11_34.FileManager/week11-week11_34.FileManager.iml" filepath="$PROJECT_DIR$/week11-week11_34.FileManager/week11-week11_34.FileManager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week11-week11_35.TwoDirectionDictionary/week11-week11_35.TwoDirectionDictionary.iml" filepath="$PROJECT_DIR$/week11-week11_35.TwoDirectionDictionary/week11-week11_35.TwoDirectionDictionary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week11-week11_36.Greeter/week11-week11_36.Greeter.iml" filepath="$PROJECT_DIR$/week11-week11_36.Greeter/week11-week11_36.Greeter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week11-week11_37.Survey/week11-week11_37.Survey.iml" filepath="$PROJECT_DIR$/week11-week11_37.Survey/week11-week11_37.Survey.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week11-week11_38.NoticeBoard/week11-week11_38.NoticeBoard.iml" filepath="$PROJECT_DIR$/week11-week11_38.NoticeBoard/week11-week11_38.NoticeBoard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week11-week11_39.ClickEffect/week11-week11_39.ClickEffect.iml" filepath="$PROJECT_DIR$/week11-week11_39.ClickEffect/week11-week11_39.ClickEffect.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week11-week11_40.Calculator/week11-week11_40.Calculator.iml" filepath="$PROJECT_DIR$/week11-week11_40.Calculator/week11-week11_40.Calculator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week11-week11_41.DrawingBoard/week11-week11_41.DrawingBoard.iml" filepath="$PROJECT_DIR$/week11-week11_41.DrawingBoard/week11-week11_41.DrawingBoard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week11-week11_42.MovingFigure/week11-week11_42.MovingFigure.iml" filepath="$PROJECT_DIR$/week11-week11_42.MovingFigure/week11-week11_42.MovingFigure.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week11-week11_43.GameOfLife/week11-week11_43.GameOfLife.iml" filepath="$PROJECT_DIR$/week11-week11_43.GameOfLife/week11-week11_43.GameOfLife.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week7-week7_01.Smileys/week7-week7_01.Smileys.iml" filepath="$PROJECT_DIR$/week7-week7_01.Smileys/week7-week7_01.Smileys.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week7-week7_02.CharacterStringChanger/week7-week7_02.CharacterStringChanger.iml" filepath="$PROJECT_DIR$/week7-week7_02.CharacterStringChanger/week7-week7_02.CharacterStringChanger.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week7-week7_03.Calculator/week7-week7_03.Calculator.iml" filepath="$PROJECT_DIR$/week7-week7_03.Calculator/week7-week7_03.Calculator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week7-week7_04.ThingSuitcaseAndContainer/week7-week7_04.ThingSuitcaseAndContainer.iml" filepath="$PROJECT_DIR$/week7-week7_04.ThingSuitcaseAndContainer/week7-week7_04.ThingSuitcaseAndContainer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week7-week7_05.Nicknames/week7-week7_05.Nicknames.iml" filepath="$PROJECT_DIR$/week7-week7_05.Nicknames/week7-week7_05.Nicknames.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week7-week7_06.PromissoryNote/week7-week7_06.PromissoryNote.iml" filepath="$PROJECT_DIR$/week7-week7_06.PromissoryNote/week7-week7_06.PromissoryNote.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week7-week7_07.Dictionary/week7-week7_07.Dictionary.iml" filepath="$PROJECT_DIR$/week7-week7_07.Dictionary/week7-week7_07.Dictionary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week7-week7_08.Airport/week7-week7_08.Airport.iml" filepath="$PROJECT_DIR$/week7-week7_08.Airport/week7-week7_08.Airport.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week8-week8_09.CarRegistrationCentre/week8-week8_09.CarRegistrationCentre.iml" filepath="$PROJECT_DIR$/week8-week8_09.CarRegistrationCentre/week8-week8_09.CarRegistrationCentre.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week8-week8_10.NationalService/week8-week8_10.NationalService.iml" filepath="$PROJECT_DIR$/week8-week8_10.NationalService/week8-week8_10.NationalService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week8-week8_11.BoxesAndThings/week8-week8_11.BoxesAndThings.iml" filepath="$PROJECT_DIR$/week8-week8_11.BoxesAndThings/week8-week8_11.BoxesAndThings.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week8-week8_12.OnlineShop/week8-week8_12.OnlineShop.iml" filepath="$PROJECT_DIR$/week8-week8_12.OnlineShop/week8-week8_12.OnlineShop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week8-week8_13.RichFirstPoorLast/week8-week8_13.RichFirstPoorLast.iml" filepath="$PROJECT_DIR$/week8-week8_13.RichFirstPoorLast/week8-week8_13.RichFirstPoorLast.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week8-week8_14.StudentsSortedByName/week8-week8_14.StudentsSortedByName.iml" filepath="$PROJECT_DIR$/week8-week8_14.StudentsSortedByName/week8-week8_14.StudentsSortedByName.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week8-week8_15.SortedCards/week8-week8_15.SortedCards.iml" filepath="$PROJECT_DIR$/week8-week8_15.SortedCards/week8-week8_15.SortedCards.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week8-week8_16.SkiJumping/week8-week8_16.SkiJumping.iml" filepath="$PROJECT_DIR$/week8-week8_16.SkiJumping/week8-week8_16.SkiJumping.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week9-week9_17.FirstPackages/week9-week9_17.FirstPackages.iml" filepath="$PROJECT_DIR$/week9-week9_17.FirstPackages/week9-week9_17.FirstPackages.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week9-week9_18.Moving/week9-week9_18.Moving.iml" filepath="$PROJECT_DIR$/week9-week9_18.Moving/week9-week9_18.Moving.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week9-week9_19.MethodArgumentValidation/week9-week9_19.MethodArgumentValidation.iml" filepath="$PROJECT_DIR$/week9-week9_19.MethodArgumentValidation/week9-week9_19.MethodArgumentValidation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week9-week9_20.SensorsAndTemperatureMeasurement/week9-week9_20.SensorsAndTemperatureMeasurement.iml" filepath="$PROJECT_DIR$/week9-week9_20.SensorsAndTemperatureMeasurement/week9-week9_20.SensorsAndTemperatureMeasurement.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week9-week9_21.Printer/week9-week9_21.Printer.iml" filepath="$PROJECT_DIR$/week9-week9_21.Printer/week9-week9_21.Printer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week9-week9_22.FileAnalysis/week9-week9_22.FileAnalysis.iml" filepath="$PROJECT_DIR$/week9-week9_22.FileAnalysis/week9-week9_22.FileAnalysis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week9-week9_23.WordInspection/week9-week9_23.WordInspection.iml" filepath="$PROJECT_DIR$/week9-week9_23.WordInspection/week9-week9_23.WordInspection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week9-week9_24.MultipleEntryDictionary/week9-week9_24.MultipleEntryDictionary.iml" filepath="$PROJECT_DIR$/week9-week9_24.MultipleEntryDictionary/week9-week9_24.MultipleEntryDictionary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week9-week9_25.DuplicateRemover/week9-week9_25.DuplicateRemover.iml" filepath="$PROJECT_DIR$/week9-week9_25.DuplicateRemover/week9-week9_25.DuplicateRemover.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week9-week9_26.PhoneSearch/week9-week9_26.PhoneSearch.iml" filepath="$PROJECT_DIR$/week9-week9_26.PhoneSearch/week9-week9_26.PhoneSearch.iml" />
+    </modules>
+  </component>
+</project>
