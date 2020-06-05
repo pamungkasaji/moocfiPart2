@@ -1,2 +1,32 @@
+Belum bisa :
+week 7 exercise 01
+week 7 exercise 08 test print gagal
+
+Note :
+week 7 exercise 5 test failed
+
 Week 7
+- Recap basic (Loop, method, class, object etc)
 - Refactoring
+- Primitive- and reference-type variables
+    Java is a strongly typed language, what this means is that all of its variables have a type
+        2 types : primitive-type and reference-type variables
+    both have slot.
+        Primitive-type variables hold the concrete value in their slot,
+            int, double, char, boolean, short, float, byte and long
+        reference-type variables hold a reference to a concrete object.
+- Hashmap
+    HashMap<key, value>
+    HashMap<String, Book> map = new HashMap<String, Book>();
+    methods
+        get(key) return value
+        containskey(key) return boolean
+        values() Returns a set of values in the HashMap
+        keySet() return set of keys
+        size()
+    HashMap keys and stored objects are reference-type variables
+        int -> Integer, double -> Double, char -> Character
+        Java encapsulates original-type values and translates them into reference-type in Hashmap
+        auto-boxing = translation of original-type variables into reference-type ones
+        make sure the value is not null when tranlating reference-type to original-type. Use containsKey method
+

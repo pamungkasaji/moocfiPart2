@@ -1,12 +1,14 @@
 
 public class Smileys {
 
-public static void main(String[] args) {
+    public static void main(String[] args) {
 
         // Test your method at least with the following
-        printWithSmileys("Meth");
-        printWithSmileys("Bee");
-        printWithSmileys("Inter");
+        printWithSmileys("\\:D/");
+        printWithSmileys("87.");
+        printWithSmileys("Matti");
+        printWithSmileys("Mikael");
+        printWithSmileys("Arto");
     }
 
     private static void printWithSmileys(String characterString) {
@@ -31,9 +33,8 @@ public static void main(String[] args) {
     }
 
     private static void printSmiley(int length) {
-        String smiley = ":)";
-        for (int i = 0; i < length; i++) {
-            System.out.print(smiley);
+        for (int i=0; i<length; i++){
+            System.out.print(":)");
         }
         System.out.println("");
     }

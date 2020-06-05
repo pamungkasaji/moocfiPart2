@@ -6,15 +6,27 @@
 
 public class Change {
 
-    private final char toCharacter;
-    private final char fromCharacter;
+    private char fromCharacter;
+    private char toCharacter;
 
     public Change(char fromCharacter, char toCharacter) {
         this.fromCharacter = fromCharacter;
         this.toCharacter = toCharacter;
     }
 
-    public String change(String characterString) {
-        return characterString.replace(fromCharacter, toCharacter);
+    public String change(String characterString){
+        String replaced = "";
+        for ( int i=0; i < characterString.length(); i++) {
+            char character = characterString.charAt(i);
+            if ( character == fromCharacter ) {
+                replaced += toCharacter;
+            }  else {
+                replaced += character;
+            }
+        }
+        return replaced;
+
+        //atau
+        //return characterString.replace(fromCharacter, toCharacter);
     }
 }

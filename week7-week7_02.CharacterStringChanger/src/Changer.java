@@ -8,19 +8,19 @@ import java.util.ArrayList;
  */
 public class Changer {
 
-    private final ArrayList<Change> changes;
+    private ArrayList<Change> changes;
 
     public Changer() {
-        changes = new ArrayList<Change>();
+        changes = new ArrayList<>();
     }
 
-    public void addChange(Change change) {
+    public void addChange(Change change){
         changes.add(change);
     }
 
-    public String change(String characterString) {
-        for (Change Change : changes) {
-            characterString = Change.change(characterString);
+    public String change(String characterString){
+        for (Change change : changes){
+            characterString = change.change(characterString);
         }
         return characterString;
     }

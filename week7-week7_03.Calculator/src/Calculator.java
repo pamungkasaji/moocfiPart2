@@ -13,7 +13,6 @@ public class Calculator {
 
     public Calculator() {
         this.reader = new Reader();
-        this.count = count;
     }
 
     public void start() {
@@ -26,13 +25,10 @@ public class Calculator {
 
             if (command.equals("sum")) {
                 sum();
-                count++;
             } else if (command.equals("difference")) {
                 difference();
-                count++;
             } else if (command.equals("product")) {
                 product();
-                count++;
             }
         }
 
@@ -40,39 +36,31 @@ public class Calculator {
     }
 
     private void sum() {
-        int sum = inputNumbers().get(0) + inputNumbers().get(0);
-        System.out.println("sum of the values " + sum);
-    }
-
-    private void product() {
-        int product = inputNumbers().get(0) * inputNumbers().get(0);
-        System.out.println("product of the values " + product);
+        int[] values = input();
+        System.out.println("Sum of the values " + (values[0]+values[1]));
     }
 
     private void difference() {
-        int diff = inputNumbers().get(0) - inputNumbers().get(0);
-        System.out.println("difference of the values " + diff);
+        int[] values = input();
+        System.out.println("difference of the values " + (values[0]-values[1]));
+    }
+
+    private void product() {
+        int[] values = input();
+        System.out.println("product of the values " + (values[0]*values[1]));
     }
 
     private void statistics() {
-        System.out.println("Calculations done " + count);
+        System.out.println("Calculations done: " + count);
     }
 
-    private ArrayList<Integer> inputNumbers() {
-        int inputCounter = 0;
-        ArrayList<Integer> twoNum = new ArrayList<Integer>();
-
-        if (inputCounter % 2 == 0) {
-            System.out.print("value1: ");
-            int value1 = reader.readInteger();
-            twoNum.add(value1);
-        } else {
-            System.out.print("value2: ");
-            int value2 = reader.readInteger();
-            twoNum.add(value2);
-        }
-        
-        inputCounter++;
-        return (twoNum);
+    private int[] input () {
+        count++;
+        int[] values = new int[2];
+        System.out.print("value 1: ");
+        values[0] = reader.readInteger();
+        System.out.print("value 2: ");
+        values[1] = reader.readInteger();
+        return values;
     }
 }

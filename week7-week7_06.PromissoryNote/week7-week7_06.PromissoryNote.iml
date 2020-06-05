@@ -24,5 +24,6 @@
     <orderEntry type="library" name="lib" level="project" />
     <orderEntry type="library" name="lib5" level="project" />
     <orderEntry type="library" name="lib2" level="project" />
+    <orderEntry type="module" module-name="week7-week7_07.Dictionary" />
   </component>
 </module>

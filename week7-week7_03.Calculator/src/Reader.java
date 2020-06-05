@@ -8,13 +8,17 @@ import java.util.Scanner;
  */
 public class Reader {
 
-    private final Scanner reader = new Scanner(System.in);
+    private Scanner reader;
 
-    public String readString() {
+    public Reader() {
+        this.reader = new Scanner(System.in);
+    }
+
+    public String readString(){
         return reader.nextLine();
     }
 
-    public int readInteger() {
+    public int readInteger(){
         return Integer.parseInt(reader.nextLine());
     }
 }
