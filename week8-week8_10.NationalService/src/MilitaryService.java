@@ -14,15 +14,13 @@ public class MilitaryService implements NationalService {
 
     @Override
     public int getDaysLeft() {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         return this.daysLeft;
     }
 
     @Override
     public void work() {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        if (this.daysLeft > 0) {
-            this.daysLeft--;
+        if (daysLeft > 0){
+            daysLeft -= 1;
         }
     }
 }

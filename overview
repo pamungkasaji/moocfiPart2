@@ -1,6 +1,7 @@
 Belum bisa :
 week 7 exercise 01
-week 7 exercise 08 test print gagal
+week 7 exercise 08 print belum sesuai
+week 8 exercise 16
 
 Note :
 week 7 exercise 5 test failed
@@ -30,3 +31,76 @@ Week 7
         auto-boxing = translation of original-type variables into reference-type ones
         make sure the value is not null when tranlating reference-type to original-type. Use containsKey method
 
+Week 8
+- Override
+    has to have the same method signature (name of the method, and the number and type of it's parameters)
+- Equals Method
+    type casting to change the type of the Object reference
+        Object getClass method
+        WantedType variable = (WantedType) oldVariable;
+- ArrayList contains method
+    compares objects through the equals method.
+    need equals method in object to use arraylist contains method
+- hashCode Method
+    HashMap uses the Object class hashCode() method to find a key value
+    hashCode method in a way that it assigns the same value to all the objects whose content is regarded as similar
+    takes an object and returns a numeric value, return int. Need numeric values when using object as HashMap keys
+    Default implementation creates an index based on the reference, different objects with the same content receive different hashCode method outputs
+    When using String and Integer objects as HashMap keys, their hashCode method is implemented by default
+    get(key) method with custom object as key
+        The class which works as key must overwrite both the equals method and the hashCode method
+- Interface
+    Interface is an instrument we have to define the functionality our classes SHOULD HAVE
+    Interface class finine the method names and return values, but they do not contain method implementation and access modifier
+    The classes which implement an interface decide in which way the methods defined in the interface have to be implemented
+- An Interface as Variable Type
+    class SMS implements the interface Readable, it has two types: SMS and Readable
+    Readable readable = new SMS("teacher", "The SMS is Readable!");
+- An Interface as Method Parameter
+    parameter can be whatever class instance which implements the interface
+        Box box = new Box(10);
+        box.add( new Book("Fedor Dostojevski", "Crime and Punishment", 2) ) ;
+- An Interface as Method Return Value
+    example : Factory class, which can be used to produce different objects (CD, book etc) that implement the interface Item
+- Using interfaces while programming permits us to reduce the number of dependences among our classes
+- Made-Up Interfaces
+    List
+        ArrayList implements the List
+            List<String> strings = new LinkedList<String>();
+    Map
+        HashMaps implement the Map interface
+    Set
+        A collection that contains no duplicate elements
+    Collection
+        List and Set interfaces implement the Collection interface
+        Collection interface provides contains and size method
+        We can parse any class which implements the Collection interface with a for-each loop.
+- Generics
+    Allow type (Integer, String, … or user defined types) to be a parameter to methods, classes and interfaces
+    use <> to specify parameter types in generic class creation
+    ArrayList and HashMap use generic
+    public class Slot<T>
+         we have to give a type parameter to the constructor of the class Slot
+    Slot<String> string = new Slot<String>();
+        create slot object
+- Generics Interface
+    Interface Comparable<T>
+    Parameter: T - the type of objects that this object may be compared to
+    Collections.sort uses the compareTo method to define key order
+    implement Comparable and override compareTo method
+    Example: public class ClubMember implements Comparable<ClubMember> { ... }
+        The interface requires the method compareTo, which returns an integer that tells us the comparison order
+            compareTo return negative number if this object is smaller than its parameter object, return zero if equal
+        Collections.sort(clubMembersList);
+    Sort String
+        Implement compareTo, and use compareToIgnoreCase method
+    Compare object value
+        Implement compareTo method
+    Multiple comparison
+        use different classes which implement the interface Comparator<...> to execute the comparison
+            sort method now receives as second parameter an object of the class that determines the sorting order
+            Collections.sort(cards, new SortAgainstSuit() );
+        https://docs.oracle.com/javase/tutorial/collections/interfaces/order.html
+- Collection Binary Search
+    method binarySearch() makes use of the Comparable interface to retieve objects
+    If the object's compareTo() returns 0, i.e. if it is the same object, the key is considered found

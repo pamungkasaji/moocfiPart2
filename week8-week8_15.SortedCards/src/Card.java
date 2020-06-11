@@ -16,8 +16,9 @@ public class Card implements Comparable<Card> {
      */
     public static final String[] SUITS = {"Spades", "Diamonds", "Hearts", "Clubs"};
     public static final String[] VALUES = {"-", "-", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"};
-    private final int value;
-    private final int suit;
+
+    private int value;
+    private int suit;
 
     public Card(int value, int suit) {
         this.value = value;
@@ -25,18 +26,16 @@ public class Card implements Comparable<Card> {
     }
 
     @Override
-    public int compareTo(Card card) {
-
-        if (this.value != card.getValue()) {
-            return this.value - card.getValue();
-        } else {
-            return this.suit - card.getSuit();
-        }
+    public String toString() {
+        return VALUES[value] + " of " + SUITS[suit];
     }
 
     @Override
-    public String toString() {
-        return VALUES[value] + " of " + SUITS[suit];
+    public int compareTo(Card o) {
+        if (this.value == o.getValue()){
+            return this.suit - o.getSuit();
+        }
+        return this.value - o. getValue();
     }
 
     public int getValue() {
@@ -46,5 +45,4 @@ public class Card implements Comparable<Card> {
     public int getSuit() {
         return suit;
     }
-
 }

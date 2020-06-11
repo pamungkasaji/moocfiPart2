@@ -5,12 +5,12 @@
  */
 
 public class CD implements ToBeStored {
-    
-    private final String artist, title;
-    private final int year;
-    private final double weight; //in kg
-    
-    public CD(String artist, String title, int year){
+
+    private String artist, title;
+    private int year;
+    private double weight;
+
+    public CD(String artist, String title, int year) {
         this.artist = artist;
         this.title = title;
         this.year = year;
@@ -18,13 +18,12 @@ public class CD implements ToBeStored {
     }
 
     @Override
-    public double weight() {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    return this.weight;
-    }
-    
-    @Override
     public String toString(){
         return this.artist + ": " + this.title + " (" + this.year + ")";
+    }
+
+    @Override
+    public double weight() {
+        return weight;
     }
 }

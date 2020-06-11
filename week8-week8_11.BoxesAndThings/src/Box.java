@@ -12,43 +12,38 @@ import java.util.ArrayList;
  */
 public class Box implements ToBeStored {
 
-    private final double maxWeight; //in kgs
-    private final ArrayList<ToBeStored> boxes;
+    private double maxWeight;
+    private ArrayList<ToBeStored> things;
 
     public Box(double maxWeight) {
-        this.boxes = new ArrayList<ToBeStored>();
         this.maxWeight = maxWeight;
+        things = new ArrayList<>();
+    }
+
+    public void add(ToBeStored thing){
+        if (weight() + thing.weight() <= maxWeight){
+            things.add(thing);
+        }
     }
 
     @Override
     public double weight() {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-
-        double weight = 0.0;
-
-        for (ToBeStored toStore : this.boxes) {
-            weight += toStore.weight();
-            //return this.maxWeight;
+        double weight = 0;
+        for (ToBeStored thing : things){
+            weight += thing.weight();
         }
         return weight;
     }
 
-    public void add(ToBeStored toAdd) {
-
-        double boxWeight = toAdd.weight();
-
-        if (boxWeight + this.weight() <= this.maxWeight) {
-            this.boxes.add(toAdd);
-        }
-    }
+    //test printall
+//    public void printAll(){
+//        for (ToBeStored thing : things){
+//            System.out.println(thing);
+//        }
+//    }
 
     @Override
     public String toString() {
-
-        int count = this.boxes.size();
-        double weight = this.weight();
-
-        return "Box: " + count + " things," + " total weight " + weight + " kg";
-
+        return "Box: " + things.size() + " things, total weight " + weight() + " kg" ;
     }
 }

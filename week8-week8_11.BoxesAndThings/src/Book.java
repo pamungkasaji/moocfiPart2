@@ -6,8 +6,9 @@
 
 public class Book implements ToBeStored {
 
-    private final String writer, name;
-    private final double weight;
+    private String writer;
+    private String name;
+    private double weight;
 
     public Book(String writer, String name, double weight) {
         this.writer = writer;
@@ -16,16 +17,12 @@ public class Book implements ToBeStored {
     }
 
     @Override
-    public double weight() {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        return this.weight;
-    }
-    
-    @Override
     public String toString(){
         return this.writer + ": " + this.name;
     }
-    
-    
-    
+
+    @Override
+    public double weight() {
+        return weight;
+    }
 }

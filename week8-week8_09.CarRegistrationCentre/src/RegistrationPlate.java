@@ -1,60 +1,53 @@
-
 public class RegistrationPlate {
-    // don't change the code which is already given to you
-
     // ATTENTION: the object variable types are final, meaning that their value cannot be changed!
     private final String regCode;
     private final String country;
 
-    public RegistrationPlate(String country, String regCode) {
+    public RegistrationPlate(String regCode, String country) {
         this.regCode = regCode;
         this.country = country;
     }
-        
-    public String getCountry(){
-        return this.country;
-    }
-    
-    public String getRegisterationCode(){
-        return this.regCode;
+
+    public String toString(){
+        return country+ " "+regCode;
     }
 
     @Override
-    public String toString() {
-        return country + " " + regCode;
+    public int hashCode() {
+        if (regCode == null){
+            return 1;
+        }
+        if (country == null){
+            return 2;
+        }
+        return regCode.hashCode() + country.hashCode();
     }
 
     @Override
-    public boolean equals(Object object) {
-        if (object == null) {
+    public boolean equals(Object obj) {
+        if (obj == null){
+            return false;
+        }
+        if (getClass() != obj.getClass()){
             return false;
         }
 
-        if (getClass() != object.getClass()) {
+        RegistrationPlate plate = (RegistrationPlate) obj;
+        if (regCode == null || !regCode.equals(plate.getRegCode())){
             return false;
         }
-
-        RegistrationPlate newPlate = (RegistrationPlate) object;
-
-        if (!this.country.equals(newPlate.getCountry())) {
-            return false;
-        }
-
-        if (this.regCode == null || !this.regCode.equals(newPlate.getRegisterationCode())) {
+        if (country == null || !country.equals(plate.getCountry())){
             return false;
         }
 
         return true;
     }
 
-    @Override
-    public int hashCode() {
-        if (this.regCode == null) {
-            return 7;
-        }
+    public String getRegCode() {
+        return regCode;
+    }
 
-        return this.country.hashCode() + this.regCode.hashCode();
+    public String getCountry() {
+        return country;
     }
 }
-
-

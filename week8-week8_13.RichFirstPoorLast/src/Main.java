@@ -16,12 +16,7 @@ public class Main {
         people.add(new Person("Pertti", 80));
 
         System.out.println(people);
-
-        /*
-         * When you have implemented the compareTo-method, remove comment below.
-         */
         Collections.sort(people);
         System.out.println(people);
-
     }
 }

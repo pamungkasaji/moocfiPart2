@@ -5,67 +5,44 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- *
- * @author
- */
 public class Storehouse {
 
-    private Map<String, Integer> prodPrice;
-    private Map<String, Integer> prodStock;
+    private Map<String, Integer> prices;
+    private Map<String, Integer> stocks;
 
     public Storehouse() {
-        this.prodPrice = new HashMap<String, Integer>();
-        this.prodStock = new HashMap<String, Integer>();
+        this.prices = new HashMap<>();
+        this.stocks = new HashMap<>();
     }
 
-    //adds product to corresponding Map
-    public void addProduct(String product, int price, int stock) {
-        this.prodPrice.put(product, price);
-        this.prodStock.put(product, stock);
+    public void addProduct(String product, int price, int stock){
+        prices.put(product, price);
+        stocks.put(product, stock);
     }
 
-    //checks and return if the product is available in the store
-    public int price(String product) {
-        if (this.prodPrice.containsKey(product)) {
-            return this.prodPrice.get(product);
-        } else {
-            return -99;
+    public int price(String product){
+        if (prices.containsKey(product)){
+            return prices.get(product);
         }
+        return -99;
     }
 
-    // returns the total number of products in stock
-    public int stock(String product) {
-        if (this.prodStock.containsKey(product)) {
-            return this.prodStock.get(product);
-        } else {
-            return 0;
+    public int stock(String product){
+        if (stocks.containsKey(product)){
+            return stocks.get(product);
         }
+        return 0;
     }
 
-    //reduces the product added to shopper's cart by 1
-    public boolean take(String product) {
-        if (this.prodStock.containsKey(product) && this.prodStock.get(product) > 0) {
-            this.prodStock.put(product, this.prodStock.get(product) - 1);
-            //this.prodStock.values();
+    public boolean take(String product){
+        if (stock(product) > 0){
+            stocks.put(product, stock(product) - 1);
             return true;
-        } else {
-            return false;
         }
+        return false;
     }
 
-    //prints the set of products
-    public Set<String> products() {
-        Set<String> test = new HashSet<String>();
-
-        for (String key : this.prodPrice.keySet()) {
-            test.add(key);
-        }
-        return test;
+    public Set<String> products(){
+        return prices.keySet();
     }
 }

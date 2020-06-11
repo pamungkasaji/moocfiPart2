@@ -3,57 +3,42 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- *
- * @author
- */
 public class Hand implements Comparable <Hand>{
 
-    private final List<Card> hand;
+    private ArrayList<Card> hand;
 
     public Hand() {
-        this.hand = new ArrayList<Card>();
+        hand = new ArrayList<>();
     }
 
-    //this method adds card to the arraylist hand
-    public void add(Card card) {
-        this.hand.add(card);
+    public void add(Card card){
+        hand.add(card);
     }
 
-    //this method prints out the card
-    public void print() {
-        for (Card card : this.hand) {
+    public void sort(){
+        Collections.sort(hand);
+    }
+
+    public void print(){
+        for (Card card : hand){
             System.out.println(card);
         }
     }
 
-    public void sort() {
-        Collections.sort(this.hand);
+    @Override
+    public int compareTo(Hand o) {
+        int value1 = 0, value2 = 0;
+        for (Card card : this.hand){
+            value1 += card.getValue();
+        }
+        for (Card card : o.hand){
+            value2 += card.getValue();
+        }
+        return value1 - value2;
     }
 
-    
-    @Override
-    public int compareTo(Hand hh){
-        int sum1 = 0;
-        for (Card card : hh.hand){
-            sum1 += card.getValue();
-        }
-        
-        int sum2 = 0;
-        for (Card card : this.hand){
-            sum2 += card.getValue();
-        }
-        
-        return sum2 - sum1;
-    }
-    
-    public void sortAgainstSuit(){
-        SortAgainstSuitAndValue suitSorter = new SortAgainstSuitAndValue();
-         Collections.sort(this.hand, suitSorter);
+    public void sortAgainstSuit() {
+        Collections.sort(hand, new SortAgainstSuitAndValue());
+        //hand.sort(new SortAgainstSuitAndValue());
     }
 }

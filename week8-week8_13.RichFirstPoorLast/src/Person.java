@@ -21,16 +21,9 @@ public class Person implements Comparable <Person> {
     public String toString() {
         return name + " " + salary;
     }
-    
-    @Override
-    public int compareTo(Person person){
-        if (this.salary == person.getSalary()){
-            return 0;
-        } else if (this.salary > person.getSalary()){
-            return -1;
-        } else {
-            return 1;
-        }
 
+    @Override
+    public int compareTo(Person person) {
+        return person.getSalary() - this.salary;
     }
 }
