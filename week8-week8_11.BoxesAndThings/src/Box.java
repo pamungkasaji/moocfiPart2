@@ -36,11 +36,11 @@ public class Box implements ToBeStored {
     }
 
     //test printall
-//    public void printAll(){
-//        for (ToBeStored thing : things){
-//            System.out.println(thing);
-//        }
-//    }
+    public void printAll(){
+        for (ToBeStored thing : things){
+            System.out.println(thing);
+        }
+    }
 
     @Override
     public String toString() {

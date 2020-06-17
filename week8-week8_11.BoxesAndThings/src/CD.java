@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-public class CD implements ToBeStored {
+public class CD implements ToBeStored{
 
     private String artist, title;
     private int year;

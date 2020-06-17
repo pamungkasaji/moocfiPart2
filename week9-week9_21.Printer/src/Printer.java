@@ -1,34 +1,30 @@
 
+import com.sun.org.apache.xml.internal.serialize.LineSeparator;
+
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- *
- * @author
- */
 public class Printer {
 
-    private final File file;
-    private Scanner r;
+    private Scanner reader;
+    private List<String> lines;
 
     public Printer(String fileName) throws Exception {
-        this.file = new File(fileName);
+        reader = new Scanner( new File(fileName) );
+        lines = new ArrayList<>();
+
+        while (reader.hasNextLine()){
+            lines.add(reader.nextLine());
+        }
     }
 
-    public void printLinesWhichContain(String word) throws Exception {
-        r = new Scanner(this.file);
-        while (r.hasNextLine()) {
-            String s = r.nextLine();
-            if (s.contains(word)) {
-                System.out.println(s);
+    public void printLinesWhichContain(String word){
+        for (String line : lines){
+            if(line.contains(word)){
+                System.out.println(line);
             }
         }
-        r.close();
     }
-
 }

@@ -1,50 +1,39 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package file;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
-/**
- *
- * @author
- */
 public class Analysis {
 
-    private final File file;
+    private Scanner reader;
+    private List<String> lines;
 
     public Analysis(File file) throws Exception {
-        this.file = file;
+        this.reader = new Scanner(file);
+        this.lines = new ArrayList<>();
+
+        readFile();
     }
 
-    public int lines() throws FileNotFoundException {
-
-        Scanner r = new Scanner(this.file);
-        int count = 0;
-
-        while (r.hasNextLine()) {
-            String s = r.nextLine();
-            count++;
+    public void readFile(){
+        while (reader.hasNextLine()){
+            this.lines.add(reader.nextLine() + "\n");
         }
-        r.close();
-        return count;
     }
 
-    public int characters() throws FileNotFoundException {
+    public int lines(){
+        return lines.size();
+    }
 
-        Scanner r1 = new Scanner(this.file);
-        int count1 = lines();  //TMC output was off by the number of lines
-
-        while (r1.hasNextLine()) {
-            String s1 = r1.useDelimiter("").nextLine();
-            count1 += s1.length();
+    public int characters(){
+        int characters = 0;
+        for (String line : lines){
+            characters += line.length();
         }
-        r1.close();
-        return count1;
+        return characters;
     }
-
 }

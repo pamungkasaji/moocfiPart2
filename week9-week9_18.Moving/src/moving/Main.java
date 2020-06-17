@@ -11,7 +11,6 @@ import moving.logic.Packer;
 public class Main {
 
     public static void main(String[] args) {
-        // test your program here
         List<Thing> things = new ArrayList<Thing>();
         things.add(new Item("passport", 2));
         things.add(new Item("toothbrash", 1));
@@ -22,13 +21,12 @@ public class Main {
         Packer packer = new Packer(10);
 
         // we ask our packer to pack things into boxes
-        List<Box> boxes = packer.packThings(things);
+        List<Box> boxes = packer.packThings( things );
 
-        System.out.println("number of boxes: " + boxes.size());
+        System.out.println("number of boxes: "+boxes.size());
 
         for (Box box : boxes) {
-            System.out.println("  things in the box: " + box.getVolume() + " dm^3");
-
+            System.out.println("  things in the box: "+box.getVolume()+" dm^3");
         }
     }
 }

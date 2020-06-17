@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package wordinspection;
 
 import java.io.File;
@@ -11,115 +7,88 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-/**
- *
- * @author
- */
 public class WordInspection {
 
-    private final File file;
+    private final String vowels = "aeiouyäö";
+    private Scanner reader;
+    private List<String> lines;
 
-    public WordInspection(File file) {
-        this.file = file;
+    public WordInspection(File file) throws FileNotFoundException{
+        this.lines = new ArrayList<>();
+        this.reader = new Scanner(file, "UTF-8");
+        readFile();
     }
 
-    public int wordCount() throws FileNotFoundException {
-
-        Scanner r = readFile();
-        int count = 0;
-
-        while (r.hasNextLine()) {
-            String s = r.nextLine();
-            count++;
+    private void readFile() {
+        while (reader.hasNextLine()){
+            this.lines.add(reader.nextLine());
         }
-        return count;
     }
 
-    public List<String> wordsContainingZ() throws FileNotFoundException {
-
-        Scanner r = readFile();
-
-        List<String> wordZ = new ArrayList<String>();
-
-        while (r.hasNextLine()) {
-            String s = r.nextLine();
-            if (s.contains("z")) {
-                wordZ.add(s);
-            }
-            //return wordZ;
-        }
-        return wordZ;
+    public int wordCount(){
+        return lines.size();
     }
 
-    public List<String> wordsEndingInL() throws FileNotFoundException {
-        Scanner r = readFile();
-        List<String> lastL = new ArrayList<String>();
-
-        while (r.hasNextLine()) {
-            String s = r.nextLine();
-            if (s.endsWith("l")) {
-                lastL.add(s);
+    public List<String> wordsContainingZ(){
+        List<String> containsZ = new ArrayList<>();
+        for (String line : lines){
+            if (line.contains("z")){
+                containsZ.add(line);
             }
         }
-        return lastL;
+        return containsZ;
     }
 
-    public List<String> palindromes() {
-        Scanner r = readFile();
-        List<String> palindrome = new ArrayList<String>();
-
-        while (r.hasNextLine()) {
-            String s = r.nextLine();
-            String sReverse = reverse(s);
-
-            if (s.equalsIgnoreCase(sReverse)) {
-                palindrome.add(s);
+    public List<String> wordsEndingInL(){
+        List<String> endsWithL = new ArrayList<>();
+        for (String line : lines){
+            if (line.endsWith("l")){
+                endsWithL.add(line);
             }
         }
-        return palindrome;
+        return endsWithL;
     }
 
-    public List<String> wordsWhichContainAllVowels() {
+    public List<String> palindromes(){
+        List<String> palindrom = new ArrayList<>();
 
-        //Finnish vowels - aeiouyäö
-        Scanner r = readFile();
-        List<String> wordVowel = new ArrayList<String>();
-
-        while (r.hasNextLine()) {
-            String s = r.nextLine();
-            if (s.contains("a") && s.contains("e") && s.contains("i")
-                    && s.contains("o") && s.contains("u") && s.contains("y")
-                    && s.contains("ä") && s.contains("ö")) {
-                wordVowel.add(s);
+        for (String word : lines){
+            String reversed = "";
+            for (int i=word.length() - 1; i>=0; i--){
+                reversed += word.charAt(i);
+            }
+            if (reversed.equals(word)){
+                palindrom.add(word);
             }
         }
-        return wordVowel;
+        return palindrom;
     }
 
-    //this method reads the file and returns the content in it
-    private Scanner readFile() {
-        try {
-            Scanner reader = new Scanner(this.file, "UTF-8");
-            return reader;
-        } catch (FileNotFoundException ex) {
-            return null;
+    public List<String> wordsWhichContainAllVowels(){
+        List<String> containVowels = new ArrayList<>();
+        for (String line : lines){
+            if(containsVowels(line)){
+                containVowels.add(line);
+            }
         }
+        return containVowels;
     }
 
-    private String reverse(String s) {
-   
-        StringBuilder sb = new StringBuilder(s);
-        sb.reverse();
-        String rev = sb.toString();
-        return rev;
-        
-        /*String reverse = "";
-        int length = s.length();
-
-        for (int i = 0; i < length; i++) {
-            reverse += s.charAt(length - i);
+    private boolean containsVowels(String word){
+        for (char vowel : this.stringToCharArray(vowels)){
+            if(!word.contains("" + vowel)){
+                return false;
+            }
         }
-        return reverse;*/
+        return true;
     }
 
+    // can also use toCharArray() method
+    private char[] stringToCharArray (String word) {
+        char[] chars = new char[word.length()];
+        for (int i=0; i<word.length(); i++){
+            chars[i] = word.charAt(i);
+        }
+        return chars;
+    }
 }

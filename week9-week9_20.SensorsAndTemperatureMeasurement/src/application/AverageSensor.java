@@ -1,35 +1,31 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package application;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author
- */
 public class AverageSensor implements Sensor {
 
-    private final List<Sensor> sensors;
-    private final List<Integer> readings;
+    private List<Sensor> sensors;
+    private List<Integer> readings;
 
     public AverageSensor() {
-        this.sensors = new ArrayList<Sensor>();
-        this.readings = new ArrayList<Integer>();
+        this.sensors = new ArrayList<>();
+        this.readings = new ArrayList<>();
     }
 
-    public void addSensor(Sensor additional) {
-        this.sensors.add(additional);
+    public void addSensor(Sensor additional){
+        sensors.add(additional);
+    }
+
+    public List<Integer> readings(){
+        return this.readings;
     }
 
     @Override
     public boolean isOn() {
-        for (Sensor s : sensors) {
-            if (!s.isOn()) {
+        for (Sensor sensor : sensors){
+            if (!sensor.isOn()){
                 return false;
             }
         }
@@ -38,45 +34,30 @@ public class AverageSensor implements Sensor {
 
     @Override
     public void on() {
-        for (Sensor s : sensors) {
-            s.on();
+        for (Sensor sensor : sensors){
+            sensor.on();
         }
     }
 
     @Override
     public void off() {
-        for (Sensor s : sensors) {
-            s.off();
+        for (Sensor sensor : sensors){
+            sensor.off();
         }
     }
 
     @Override
     public int measure() {
-
-        if (!this.isOn() || this.sensors.isEmpty()) {
-            throw new IllegalStateException("Thermometers are not on or the sensors are missing.");
-        } else {
-
-            // calculates average;
-            int sum = 0;
-            int average;
-
-            for (Sensor s : sensors) {
-                sum += s.measure();
-            }
-            average = sum / sensors.size();
-
-            //adds average to the list of readings for readings() method
-            this.readings.add(average);
-
-            return average;
+        if ( !this.isOn() || sensors.isEmpty() ){
+            throw new IllegalStateException("Average sensor is off");
         }
+        int reading = 0;
+        for (Sensor sensor : sensors){
+            reading += sensor.measure();
+        }
+        reading = reading / this.sensors.size();
+        readings.add(reading);
 
-    }
-
-    public List<Integer> readings() {
-
-        return this.readings;
-
+        return reading;
     }
 }

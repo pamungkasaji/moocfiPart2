@@ -2,6 +2,7 @@ Belum bisa :
 week 7 exercise 01
 week 7 exercise 08 print belum sesuai
 week 8 exercise 16
+week 9 exercise 26
 
 Note :
 week 7 exercise 5 test failed
@@ -50,6 +51,7 @@ Week 8
     get(key) method with custom object as key
         The class which works as key must overwrite both the equals method and the hashCode method
 - Interface
+    Week 8 Exercise 11
     Interface is an instrument we have to define the functionality our classes SHOULD HAVE
     Interface class finine the method names and return values, but they do not contain method implementation and access modifier
     The classes which implement an interface decide in which way the methods defined in the interface have to be implemented
@@ -104,3 +106,56 @@ Week 8
 - Collection Binary Search
     method binarySearch() makes use of the Comparable interface to retieve objects
     If the object's compareTo() returns 0, i.e. if it is the same object, the key is considered found
+
+Week 9
+- Single Responsibility Principle
+     Each class should have only one clear role
+     Each class should have only one reason to be modified
+- Organising Classes into Packages
+     split the source code files into packages according to their functionality, use, and other logical reasons
+- Interfaces are also types
+    All the objects which are created from classes that implement an interface also have that interface's type
+- Many Interfaces, and Interface Flexibility
+- Exceptions
+    try { } catch (Exception e) { }
+        try block can possibly go through an exception
+        catch block tells how we handle an exception, and it tells us what exception we should be prepared for
+        The exception information is saved into the e variable
+        The class Exception can provide useful methods
+            method printStackTrace() prints a path which tells us where the exception came from
+    Exceptions are such situations where the program executions is different from our expectations
+    code in the catch chunk is executed only in case of exception -- otherwise the program do not arrive till there.
+- Throwing Exceptions
+    Methods and constructors can throw exceptions
+    delegating exceptions responsibility to the method caller using "throws Exception" after method parameter
+    When we dont have to handle exception
+        throw new [Exception name]
+        IllegalArgumentException, IllegalStateException, NumberFormatException
+- Exceptions and Interfaces
+    If an interface defines the throws Exception attributes for the methods,
+        the classes which implement the interface must be defined in the same way.
+        However, they do not have to throw an exception
+- Reading a File
+    Scanner reader = new Scanner(new File("filename.txt"));
+    Scanner class constructor public Scanner(File source) throws a FileNotFoundException
+        we have either to handle it or throw it forward
+    When we read or when save something into a file, Java has to find out the character set used by the operating system
+        "UTF-8" is the most common, contains both the alphabet letters of everyday use
+- save ArrayLists as hashmap value
+    Map<String, ArrayList<String>>, or Map<String, List<String>>
+        map.put(string, new HashSet<Integer>());  // map an empty arraylist
+        map.get(string).add(value);               // add value to list
+    List is an interface which defines the List functionality, and ArrayLists implement this interface
+    concrete classes (HashMap and ArrayList), interfaces (Map and List)
+- Sets
+    Differently from lists, in a Set the same object can not be contained twice in a set
+    Similarity between two objects is inspected using the methods equals and hashCode
+    One of the classes which implement the Set interface is HashSet
+        Set<Integer> set = new HashSet<Integer>();
+    Hashmap with set values
+        Map<String, Set<Integer>> map = new HashMap<String, Set<Integer>>();
+            map.put(string, new HashSet<Integer>());  // map an empty set first, use containsKey method to check if key already exist
+            map.get(string).add(value);               // add value to set
+- One Object in Many Lists, Map, or Set
+    object variable are reference-type, which means that the variable memorize reference to the object
+    If we put an object into an ArrayList, the List does not memorize the object itself, but the reference to the object

@@ -1,20 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package application;
 
-/**
- *
- * @author
- */
 public class ConstantSensor implements Sensor {
 
-    private final int temperature;
+    private int num;
 
-    public ConstantSensor(int parameter) {
-        this.temperature = parameter;
+    public ConstantSensor(int num) {
+        this.num = num;
+    }
+
+    @Override
+    public int measure() {
+        return num;
     }
 
     @Override
@@ -24,17 +21,11 @@ public class ConstantSensor implements Sensor {
 
     @Override
     public void on() {
-        
+
     }
 
     @Override
     public void off() {
-         
-    }
 
-    @Override
-    public int measure() {
-        return this.temperature;
     }
-
 }

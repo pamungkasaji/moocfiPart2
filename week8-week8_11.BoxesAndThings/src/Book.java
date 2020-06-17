@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-public class Book implements ToBeStored {
+public class Book implements ToBeStored{
 
     private String writer;
     private String name;
