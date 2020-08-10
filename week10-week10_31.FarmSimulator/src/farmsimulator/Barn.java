@@ -1,24 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package farmsimulator;
 
 import java.util.Collection;
 
-/**
- *
- * @author
- */
 public class Barn {
 
-    private final BulkTank bulkTankBarn;
+    private BulkTank bulkTankBarn;
     private MilkingRobot robot;
 
     public Barn(BulkTank tank) {
         this.bulkTankBarn = tank;
-        this.robot = null;
     }
 
     public BulkTank getBulkTank() {
@@ -26,21 +17,25 @@ public class Barn {
     }
 
     public void installMilkingRobot(MilkingRobot milkingRobot) {
-        this.robot = milkingRobot;
-        this.robot.setBulkTank(bulkTankBarn);
+        robot = milkingRobot;
+        robot.setBulkTank(bulkTankBarn);
     }
 
     public void takeCareOf(Cow cow) {
         try {
-            this.robot.milk(cow);
-        } catch (Exception e) {
-            throw new IllegalStateException();
+            robot.milk(cow);
+        } catch (Exception e){
+            throw new IllegalStateException("The MilkingRobot hasn't been installed");
         }
     }
 
     public void takeCareOf(Collection<Cow> cows) {
-        for (Cow c : cows) {
-            takeCareOf(c);
+        try {
+            for (Cow cow : cows){
+                robot.milk(cow);
+            }
+        } catch (Exception e){
+            throw new IllegalStateException("The MilkingRobot hasn't been installed");
         }
     }
 

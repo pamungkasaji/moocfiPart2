@@ -1,16 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package farmsimulator;
 
+import javax.print.attribute.standard.MediaSize;
 import java.util.Random;
 
-/**
- *
- * @author
- */
 public class Cow implements Milkable, Alive {
 
     private final int UDDER_MIN = 15;
@@ -18,7 +11,6 @@ public class Cow implements Milkable, Alive {
     private final String cowName;
     private final double udderCapacity;
     private double milkAmount;
-    private final Random random = new Random();
 
     private static final String[] NAMES = new String[]{
         "Anu", "Arpa", "Essi", "Heluna", "Hely",
@@ -28,18 +20,15 @@ public class Cow implements Milkable, Alive {
         "Nina", "Nyytti", "Papu", "Pullukka", "Pulu",
         "Rima", "Soma", "Sylkki", "Valpu", "Virpi"};
 
-
     /*create cow with random name*/
     public Cow() {
-        this.cowName = NAMES[random.nextInt(NAMES.length)];
-        this.udderCapacity = UDDER_MIN + random.nextInt(UDDER_MAX - UDDER_MIN + 1);
-        this.milkAmount = 0;
+        this(NAMES[ new Random().nextInt(NAMES.length)] );
     }
 
     /*creates a new cow with its given name*/
     public Cow(String name) {
         this.cowName = name;
-        this.udderCapacity = UDDER_MIN + random.nextInt(UDDER_MAX - UDDER_MIN + 1);
+        this.udderCapacity = 15 + new Random().nextInt(26);
         this.milkAmount = 0;
     }
 
@@ -65,16 +54,16 @@ public class Cow implements Milkable, Alive {
 
     @Override
     public double milk() {
-        double milkTaken = this.milkAmount;
-        this.milkAmount = 0;
-        return milkTaken;
+        double milked = milkAmount;
+        milkAmount = 0;
+        return milked;
     }
 
     @Override
     public void liveHour() {
-        this.milkAmount += (7 + random.nextInt(20 - 7 + 1)) / 10.0;
-        if (this.milkAmount > this.udderCapacity) {
-            this.milkAmount = this.udderCapacity;
+        this.milkAmount += 0.7 + new Random().nextDouble() * 1.3;
+        if (this.milkAmount > this.udderCapacity){
+            milkAmount = udderCapacity;
         }
     }
 }

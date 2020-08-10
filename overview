@@ -159,3 +159,49 @@ Week 9
 - One Object in Many Lists, Map, or Set
     object variable are reference-type, which means that the variable memorize reference to the object
     If we put an object into an ArrayList, the List does not memorize the object itself, but the reference to the object
+
+Week 10
+- Object Polymorphism
+    all objects are Object-type. If an object is a particular type, we can also represent it as Object-type
+        Object string = "one string";
+    Variables have got their own type, and in addition to it they also have got the type of their parent classes and interfaces
+    The class String derives from the Object class, and therefore String objects are also Object-type
+    String class implements the interfaces Serializable, CharSequence, and Comparable<String>. An interface is a type, too
+- Inheritance of Class Features
+    Each Java's class descends from the class Object, each class create has all methods which are defined in Object
+        To change the functionality of the methods defined in Object, we have to Override them
+    In addition to be possible to inherit the Object class, it is also possible to inherit other classes
+    The class features are inherited using the keyword "extends"
+        The class which inherits is called subclass; the class which is inherited is called superclass
+    In subsclass constructor, keyword "super" in the first line is used to call the superclass constructor
+        Superclass object variables are assigned a value. After doing this, we assign a value to the object variable in subclass
+    When the subclass inherits the superclass, it receives all the methods provides by superclass
+    If a method or a variable have got the private field accessibility, its subclasses do not have any straight way to access it
+    Use the "protected" to define superclass variables or methods whose accessibility should be restricted to only its subclasses
+    Calling the Superclass Methods
+        The method defined in the superclass can always be called using the super prefix
+            super.toString()
+- Polymorphism
+    The ability of an object to take on many forms. Most commonly used when parent class reference is used to refer to a child class object.
+    The execution method is always chosen based on the object real type. That is the type of the variable which saved the reference
+        First look for method in the object real type, if not found, move to the superclass. If not found, move to the parent parent class
+- When Do We Have to Use Inheritance?
+    Inheritance is a tool to build and qualify object hierarchy; a subclass is always a special instance of the superclass
+    Through inheritance, a subclass receives the superclass functionality
+    Devoloping hierachy, you have to make sure the Single Responsibility Principle applies
+    Exercise 30: Container. Interesting exercise
+- Inheritance and Interfaces
+    exercise farmSimulatur, nice exercise
+        use IllegalStateException to handle null object
+        use Collection interface, ArrayList and LinkedList implement the interface Collection
+- Abstract Class
+    Abstract classes combine interfaces and inheritance
+    An abstract class can contain both normal and abstract methods
+    In general, we use abstract classes when the object they represent is not a clear, self-defined concept.
+        In such cases, it is not possible to create instances of it.
+    Both when we define abstract classes and abstract methods, we use the keyword abstract
+    The difference between interfaces and abstract classes
+        it is possible to define the functionality of abstract classes, we can use them to define the default implementation, for instance
+- Removing Objects from an ArrayList
+    The objects which have to be deleted are gathered together while we parse the list,
+        and the remove operation is executed only after parsing the list.

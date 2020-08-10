@@ -1,35 +1,24 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package farmsimulator;
 
-/**
- *
- * @author
- */
 public class BulkTank {
 
-    private final double TANK_CAPACITY = 2000;  //in liters
-    private final double tankCapacity;
+    private double capacity;
     private double volume;
 
     //this creates tank with default capacity
     public BulkTank() {
-        this.tankCapacity = TANK_CAPACITY;
-        this.volume = 0;
+        this(2000);
     }
 
     //creates tank with custom capacity
     public BulkTank(double capacity) {
-        this.tankCapacity = capacity;
-        this.volume = 0;
+        this.capacity = capacity;
     }
 
     //returns tank capacity
     public double getCapacity() {
-        return this.tankCapacity;
+        return capacity;
     }
 
     //retunrns milk in the tank
@@ -39,29 +28,29 @@ public class BulkTank {
 
     //returns empty space on tank
     public double howMuchFreeSpace() {
-        return this.tankCapacity - this.volume;
+        return capacity-volume;
     }
 
     /*adds to the tank only as much milk as it fits; the additional 
      milk will not be added, and you don't have to worry about a 
      situation where the milk spills over*/
     public void addToTank(double amount) {
-        this.volume += amount;
-        if (this.volume > this.tankCapacity) {
-            this.volume = this.tankCapacity;
+        if (volume + amount > capacity){
+            volume = capacity;
+        } else {
+            volume+=amount;
         }
     }
 
     /*takes the required amount from the tank, or as much as there is left*/
     public double getFromTank(double amount) {
-        if (this.volume - amount < 0) {
-            double takeFromTank = this.volume;
-            this.volume = 0;
-            return takeFromTank;
-        } else {
-            this.volume -= amount;
-            return amount;
+        if (volume < amount) {
+            double volTaken = volume;
+            volume = 0;
+            return volTaken;
         }
+        volume -= amount;
+        return amount;
     }
 
     @Override

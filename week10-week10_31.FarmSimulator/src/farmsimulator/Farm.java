@@ -1,17 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package farmsimulator;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author
- */
 public class Farm implements Alive {
 
     private final String owner;
@@ -31,24 +23,24 @@ public class Farm implements Alive {
 
     @Override
     public void liveHour() {
-        for (Cow c : cowsInBarn) {
-            c.liveHour();
+        for (Cow cow : cowsInBarn){
+            cow.liveHour();
         }
     }
 
     //to milk cows
     public void manageCows() {
-        this.barn.takeCareOf(cowsInBarn);
+        barn.takeCareOf(cowsInBarn);
     }
 
     //adds cow to the list
     public void addCow(Cow cow) {
-        this.cowsInBarn.add(cow);
+        cowsInBarn.add(cow);
     }
 
     //intall milking robot
     public void installMilkingRobot(MilkingRobot robot) {
-        this.barn.installMilkingRobot(robot);
+        barn.installMilkingRobot(robot);
     }
 
     @Override

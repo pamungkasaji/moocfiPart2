@@ -1,94 +1,88 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package containers;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/**
- *
- * @author
- */
 public class ContainerHistory {
-
-    private List<Double> state;
+    private ArrayList<Double> history;
 
     public ContainerHistory() {
-        this.state = new ArrayList<Double>();
+        this.history = new ArrayList<Double>();
     }
 
-    public void add(double situation) {
-        this.state.add(situation);
+    public void add(double situation){
+        history.add(situation);
     }
 
-    public void reset() {
-        this.state.clear();
+    public void reset(){
+        history.clear();
     }
 
-    public String toString() {
-        return this.state.toString();
+    public String toString(){
+        return history.toString();
     }
 
-    //this method retuns the max value from the state arraylist
-    public double maxValue() {
-        return Collections.max(this.state);
-    }
-
-    //this method returns the min value from the state arraylist
-    public double minValue() {
-        return Collections.min(this.state);
-    }
-
-    //returns average of the values from state arraylist
-    public double average() {
-        double mean = 0;
-        if (this.state.isEmpty()) {
-            return mean;
-        } else {
-            for (double state1 : this.state) {
-                mean += state1;
+    public double maxValue(){
+        if (history.isEmpty()){
+            return 0;
+        }
+        double max = history.get(0);
+        for (double h : history){
+            if (h > max){
+                max = h;
             }
         }
-        return mean / this.state.size();
+        return max;
     }
 
-    //returns the max fluctuation between two numbers in arraylist
-    public double greatestFluctuation() {
-        double maxFluctuation = 0;
-        List<Double> maxFluctuate = new ArrayList<Double>();
-        if (this.state.isEmpty() || this.state.size() == 1) {
-            return maxFluctuation;
-        } else {
-            for (int i = 0; i < this.state.size(); i++) {
-                if (i != this.state.size() - 1) {
-                    double firstNumber = this.state.get(i);
-                    double secondNumber = this.state.get(i + 1);
-                    maxFluctuation = secondNumber - firstNumber;
-                    maxFluctuate.add(maxFluctuation);
-                } else {
-                    double firstNumber = this.state.get(i - 1);
-                    double secondNumber = this.state.get(i);
-                    maxFluctuation = secondNumber - firstNumber;
-                    maxFluctuate.add(maxFluctuation);
-                }
+    public double minValue(){
+        if (history.isEmpty()){
+            return 0;
+        }
+        double min = history.get(0);
+        for (double h : history){
+            if (h < min){
+                min = h;
             }
         }
-        return Math.abs(Collections.max(maxFluctuate));
+        return min;
     }
 
-    //returns the variance of the state list
-    public double variance() {
-        double mean = average();
+    public double average(){
+        if (history.isEmpty()){
+            return 0;
+        }
         double sum = 0;
-
-        for (double state1 : state) {
-            sum += Math.pow((state1 - mean), 2);
+        for (double h : history){
+            sum += h;
         }
-        return sum / (state.size() - 1);
+        return sum/history.size();
     }
 
+    public double greatestFluctuation(){
+        if (history.isEmpty() || history.size() == 1){
+            return 0;
+        }
+        double greatest = Math.abs(history.get(0) - history.get(1));
+        for (int i=0; i<history.size()-1; i++){
+            double compared = Math.abs(history.get(i) - history.get(i+1));
+            if (compared > greatest){
+                greatest = compared;
+            }
+        }
+        return greatest;
+    }
+
+    public double variance(){
+        if (history.isEmpty() || history.size() == 1){
+            return 0;
+        }
+        double variance = 0;
+        for (double h : history){
+            variance += Math.pow(h - average() , 2);
+        }
+        return variance / (history.size() - 1);
+    }
 }

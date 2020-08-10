@@ -1,38 +1,29 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package movable;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author
- */
 public class Group implements Movable {
 
-    private final List<Movable> groups = new ArrayList<Movable>();
+    private List<Movable> movables = new ArrayList<>();
 
-    public void addToGroup(Movable movable) {
-        groups.add(movable);
+    public void addToGroup(Movable movable){
+        movables.add(movable);
     }
 
     @Override
     public void move(int dx, int dy) {
-        for (Movable org : groups) {
-            org.move(dx, dy);
+        for (Movable movable: movables){
+            movable.move(dx, dy);
         }
     }
 
     @Override
     public String toString() {
         String group = "";
-        for (Movable org : groups) {
-             group += org.toString();
-             group += '\n';
+        for (Movable movable: movables){
+            group += movable + "\n";
         }
         return group;
     }

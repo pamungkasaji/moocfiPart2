@@ -3,57 +3,54 @@ package containers;
 public class Container {
 
     private double capacity;
-    public double volume;
+    private double volume;
 
-    public Container(double tilavuus) {
-        if (tilavuus > 0.0) {
-            this.capacity = tilavuus;
+    public Container(double capacity){
+        if (capacity > 0){
+            this.capacity = capacity;
         } else {
-            this.capacity = 0.0;
+            this.capacity = 0;
         }
-
-        this.volume = 0.0;
-    }
-
-    public double getVolume() {
-        return this.volume;
+        volume = 0;
     }
 
     public double getOriginalCapacity() {
-        return this.capacity;
+        return capacity;
     }
 
-    public double getCurrentCapacity() {
-        return this.capacity - this.volume;
+    public double getVolume() {
+        return volume;
     }
 
-    public void addToTheContainer(double amount) {
+    public double getCurrentCapacity(){
+        return capacity - volume;
+    }
+
+    public void addToTheContainer(double amount){
         if (amount < 0) {
             return;
         }
-        if (amount <= getCurrentCapacity()) {
-            this.volume += amount;
+        if (amount <= getCurrentCapacity()){
+            volume += amount;
         } else {
-            this.volume = this.capacity;
+            volume = capacity;
         }
     }
 
-    public double takeFromTheContainer(double amount) {
-        if (amount < 0) {
-            return 0.0;
+    public double takeFromTheContainer(double amount){
+        if (amount <= 0){
+            return 0;
         }
-        if (amount > volume) {
-            double takeFromContainer = this.volume;
-            this.volume = 0.0;
-            return takeFromContainer;
-        } else {
-            this.volume -= amount;
-            return amount;
+        if (amount > volume){
+            double all = volume;
+            volume = 0;
+            return all;
         }
+        volume -= amount;
+        return amount;
     }
 
-    @Override
-    public String toString() {
-        return "volume = " + this.volume + ", free space " + getCurrentCapacity();
+    public String toString(){
+        return "volume = " + volume + ", free space " + getCurrentCapacity();
     }
 }

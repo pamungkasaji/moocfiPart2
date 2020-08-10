@@ -1,49 +1,42 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package containers;
 
-/**
- *
- * @author
- */
-public class ProductContainerRecorder extends ProductContainer {
+public class ProductContainerRecorder extends ProductContainer{
 
-    private ContainerHistory containerH;
+    private ContainerHistory history;
 
     public ProductContainerRecorder(String productName, double capacity, double initialVolume) {
         super(productName, capacity);
-        this.containerH = new ContainerHistory();
-        this.addToTheContainer(initialVolume);
+        super.addToTheContainer(initialVolume);
+        history = new ContainerHistory();
+        history.add(initialVolume);
     }
 
-    public String history() {
-        return containerH.toString();
+    public String history(){
+        return history.toString();
     }
 
     @Override
-    public void addToTheContainer(double amount) {
+    public void addToTheContainer(double amount){
         super.addToTheContainer(amount);
-        this.containerH.add(this.getVolume());
+        history.add(super.getVolume());
     }
 
     @Override
-    public double takeFromTheContainer(double amount) {
-        double firstVol = this.getVolume();
+    public double takeFromTheContainer(double amount){
+        double prevVol = this.getVolume();
         super.takeFromTheContainer(amount);
-        this.containerH.add(this.getVolume());
-        return firstVol - this.getVolume();
+        history.add(this.getVolume());
+        return prevVol - this.getVolume();
     }
 
-    public void printAnalysis() {
-        System.out.println("Product: " + this.getName() + "\n"
-                + "History: " + this.history() + "\n"
-                + "Greatest product amount: " + containerH.maxValue() + "\n"
-                + "Smallest product amount: " + containerH.minValue() + "\n"
-                + "Average: " + containerH.average() + "\n"
-                + "Greatest change: " + containerH.greatestFluctuation() + "\n"
-                + "Variance: " + containerH.variance());
+    public void printAnalysis(){
+        System.out.println("Product: " + super.getName());
+        System.out.println("History: " + history.toString());
+        System.out.println("Greatest product amount: " + history.maxValue());
+        System.out.println("Smallest product amount: " + history.minValue());
+        System.out.println("Average: " + history.average());
+        System.out.println("Greatest change: " + history.greatestFluctuation());
+        System.out.println("Variance: " + history.variance());
     }
 }
