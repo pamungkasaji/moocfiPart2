@@ -1,48 +1,44 @@
 package clicker.ui;
 
 import clicker.applicationlogic.Calculator;
+import java.awt.BorderLayout;
+import clicker.ui.ClickListener;
+import clicker.applicationlogic.PersonalCalculator;
+
 import java.awt.Container;
 import java.awt.Dimension;
-import java.awt.GridLayout;
 import javax.swing.*;
 
 public class UserInterface implements Runnable {
 
     private JFrame frame;
+    private Calculator calculator;
 
-    private Calculator cal;
-
-    public UserInterface(Calculator cal) {
-        this.cal = cal;
+    public UserInterface(Calculator calculator) {
+        this.calculator = calculator;
     }
 
     @Override
     public void run() {
-        this.frame = new JFrame("Click Effect");
-        this.frame.setPreferredSize(new Dimension(200, 100));
-        this.frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frame = new JFrame("Click Effect");
+        frame.setPreferredSize(new Dimension(200, 100));
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-        createComponents(this.frame.getContentPane());
+        createComponents(frame.getContentPane());
 
-        this.frame.pack();
-        this.frame.setVisible(true);
+        frame.pack();
+        frame.setVisible(true);
     }
 
     private void createComponents(Container container) {
-
-        GridLayout layout = new GridLayout(2, 1);
-        container.setLayout(layout);
-
-        JLabel text = new JLabel(Integer.toString(this.cal.giveValue()));
+        container.setLayout(new BorderLayout());
 
         JButton click = new JButton("Click!");
+        JLabel count = new JLabel("" + this.calculator.giveValue());
+        click.addActionListener(new ClickListener(this.calculator, count));
 
-        ClickListener calListener = new ClickListener(this.cal, text);
-
-        click.addActionListener(calListener);
-
-        container.add(text);
-        container.add(click);
+        container.add(count);
+        container.add(click, BorderLayout.SOUTH);
     }
 
     public JFrame getFrame() {

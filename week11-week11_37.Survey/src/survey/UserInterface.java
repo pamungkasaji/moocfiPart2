@@ -23,39 +23,23 @@ public class UserInterface implements Runnable {
 
     private void createComponents(Container container) {
         BoxLayout layout = new BoxLayout(container, BoxLayout.Y_AXIS);
-        ButtonGroup radioButtons = new ButtonGroup();
-        
         container.setLayout(layout);
 
-        JLabel text = new JLabel("Are you?");
-        container.add(text);
+        container.add(new JLabel("Are you?"));
+        container.add(new JCheckBox("Yes!"));
+        container.add(new JCheckBox("No!"));
+        container.add(new JLabel("Why?"));
 
-        //create radio buttons
-        JCheckBox yes = new JCheckBox("Yes!");
-        JCheckBox no = new JCheckBox("No!");
+        JRadioButton option1 = new JRadioButton("No Reason.");
+        JRadioButton option2 = new JRadioButton("Because it is fun!");
 
-        //add radio buttons
-        radioButtons.add(yes);
-        radioButtons.add(no);
-        
-        //add radio buttons to the canvas
-        container.add(yes);
-        container.add(no);
+        ButtonGroup buttonGroup = new ButtonGroup();
+        buttonGroup.add(option1);
+        buttonGroup.add(option2);
 
-        JLabel reason = new JLabel("Why?");
-        container.add(reason);
-
-        JRadioButton noReason = new JRadioButton("No reason.");
-        JRadioButton funReason = new JRadioButton("Because it is fun!");
-
-        radioButtons.add(noReason);
-        radioButtons.add(funReason);
-        
-        container.add(noReason);
-        container.add(funReason);
-        
-        JButton done = new JButton("Done!");
-        container.add(done);
+        container.add(option1);
+        container.add(option2);
+        container.add(new JButton("Done!"));
     }
 
     public JFrame getFrame() {

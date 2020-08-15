@@ -1,7 +1,7 @@
 package clicker.ui;
 
-import clicker.applicationlogic.PersonalCalculator;
 import javax.swing.SwingUtilities;
+import clicker.applicationlogic.PersonalCalculator;
 
 public class Main {
 

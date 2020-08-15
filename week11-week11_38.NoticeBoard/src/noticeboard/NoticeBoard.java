@@ -11,8 +11,8 @@ public class NoticeBoard implements Runnable {
 
     @Override
     public void run() {
-        this.frame = new JFrame("Notice Board");
-        this.frame.setPreferredSize(new Dimension(500, 300));
+        this.frame = new JFrame("");
+        this.frame.setPreferredSize(new Dimension(400, 200));
 
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
@@ -20,23 +20,21 @@ public class NoticeBoard implements Runnable {
 
         frame.pack();
         frame.setVisible(true);
-
     }
 
     private void createComponents(Container container) {
         GridLayout layout = new GridLayout(3, 1);
         container.setLayout(layout);
 
-        JTextField textAreaTop = new JTextField("The message in the board.");
-        JLabel textAreaButton = new JLabel();
+        JTextField textField = new JTextField();
         JButton copyButton = new JButton("Copy!");
+        JLabel copiedField = new JLabel();
 
-    ActionEventListener listener = new ActionEventListener(textAreaTop, textAreaButton);
+        ActionEventListener copier = new ActionEventListener(textField, copiedField);
+        copyButton.addActionListener(copier);
 
-        copyButton.addActionListener(listener);
-
-        container.add(textAreaTop);
+        container.add(textField);
         container.add(copyButton);
-        container.add(textAreaButton);
+        container.add(copiedField);
     }
 }

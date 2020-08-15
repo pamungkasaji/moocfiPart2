@@ -3,6 +3,7 @@ week 7 exercise 01
 week 7 exercise 08 print belum sesuai
 week 8 exercise 16
 week 9 exercise 26
+week 10 exercise 34 can't read file
 
 Note :
 week 7 exercise 5 test failed
@@ -205,3 +206,13 @@ Week 10
 - Removing Objects from an ArrayList
     The objects which have to be deleted are gathered together while we parse the list,
         and the remove operation is executed only after parsing the list.
+
+Week 11
+- Writing a file
+    use write method in FileWriter class to write a file
+    use Scanner and File class to read a file
+- User Interfaces using Swing
+    Managing Action Events
+    (important) Separating Application and UI Logic
+        As the single responsibility principle states: each class should have only one clear responsibility
+        

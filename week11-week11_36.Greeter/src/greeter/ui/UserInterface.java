@@ -1,10 +1,8 @@
-package greeter.ui;
+package survey;
 
 import java.awt.Container;
 import java.awt.Dimension;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.WindowConstants;
+import javax.swing.*;
 
 public class UserInterface implements Runnable {
 
@@ -12,8 +10,8 @@ public class UserInterface implements Runnable {
 
     @Override
     public void run() {
-        this.frame = new JFrame("Swing on");
-        this.frame.setPreferredSize(new Dimension(400, 200));
+        this.frame = new JFrame("Survey");
+        this.frame.setPreferredSize(new Dimension(300, 300));
 
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
