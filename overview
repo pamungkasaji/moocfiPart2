@@ -215,4 +215,56 @@ Week 11
     Managing Action Events
     (important) Separating Application and UI Logic
         As the single responsibility principle states: each class should have only one clear responsibility
-        
+    Moving figure (Exc 42), interesting project
+
+Week 12
+- Regular Expressions
+    regular expression is a compact form to define a string. Used to check the validity of strings
+    use the matches method of the class String
+    Vertical Bar: Logical or
+        00|111|0000 defines the strings 00, 111 and 0000 (exactly same form)
+    Round Brackets: a Delimited Part of the String
+        look(|s|ed) = look, looks, looked
+    Repetitions
+        * stands for a repetition from 0 to n times
+            "trolololololo" matches "trolo(lo)*"
+        + stands for a repetition from 1 to n times
+            "nänänänänänänänä Bätmään!" matches (nä)+ Bätmään!
+        ? stands for a repetition of 0 or 1 time
+            You have accidentally (deleted )?the whole name
+        {a} stands for a repetition of a times
+            "1010" matches "(10){2}"
+        {a,b} stands for a repetition from a to b times
+        {a,} stands for a repetition from a to n times
+            "11111" matches "1{2,}"
+    Square Brackets: Character Groups
+        [145] means the same as (1|4|5)
+        [2-36-9] means the same as (2|3|6|7|8|9)
+- Enum: Enumerated Type
+    enum lists its constant values divided by a comma
+        public enum Suit {
+            DIAMONDS, SPADES, CLUBS, HEARTS }
+    Enumerated Type Constructor Parameters
+        GREEN("green"),
+        BLUE("blue");
+- Iterator
+    Collection interface indirectly implement the interface Iterable
+    Objects which implement Iterable can be parses, or "iterated", with statements such as for each.
+    Object containers can also be iterated using a so called iterator object
+        Iterator<Card> iterator = cards.iterator();
+        while ( iterator.hasNext() ){
+            System.out.println( iterator.next() );
+        }
+    To delete a part of the objects while we parse our list, we have to use an iterator
+        iterator.remove();
+- Loops and continue
+    continue statement, allows to skip to the following loop stage.
+- Variable Number of Method Parameters
+    public int sum(int... values) can be given as parameter as many integers (int) as the user wants
+        values[i]
+    this must be the last parameter in the method definition
+- StringBuilder
+    strings are immutable objects. The result of a String operation is always a new String object
+    use StringBuilder object
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("{");
